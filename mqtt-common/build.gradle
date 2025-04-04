@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'io.wisoft'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    api 'org.springframework.integration:spring-integration-mqtt:6.4.3'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
